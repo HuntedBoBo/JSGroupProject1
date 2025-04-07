@@ -51,7 +51,25 @@ export default function Home() {
     Search
   </button>
 </div>
-
+{/* Search Results */}
+<ul className="mt-6 flex flex-col gap-6 w-full">
+  {filtered.map((emp) => (
+    <li key={emp.id} className="flex gap-4 items-start border p-4 rounded-lg shadow-md bg-white dark:bg-[#111]">
+      <Image
+        src={emp.photoUrl}
+        alt={emp.name}
+        width={80}
+        height={80}
+        className="rounded-full object-cover"
+      />
+      <div>
+        <h2 className="text-lg font-semibold">{emp.name}</h2>
+        <p className="text-sm text-gray-500 dark:text-gray-300">{emp.role}</p>
+        <p className="text-sm mt-2 max-w-prose text-gray-700 dark:text-gray-200">{emp.bio}</p>
+      </div>
+    </li>
+  ))}
+</ul>
         <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
           <li className="mb-2 tracking-[-.01em]">
             Get started by editing{" "}
