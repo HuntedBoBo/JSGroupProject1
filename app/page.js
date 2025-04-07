@@ -35,6 +35,23 @@ export default function Home() {
           height={38}
           priority
         />
+        {/* Search Box */}
+<div className="w-full flex flex-col sm:flex-row gap-4 items-center">
+  <input
+    type="text"
+    placeholder="Search employees..."
+    value={query}
+    onChange={(e) => setQuery(e.target.value)}
+    className="border border-gray-300 rounded px-4 py-2 w-full sm:w-96"
+  />
+  <button
+    onClick={handleSearch}
+    className="bg-black text-white dark:bg-white dark:text-black px-4 py-2 rounded hover:opacity-80 transition"
+  >
+    Search
+  </button>
+</div>
+
         <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
           <li className="mb-2 tracking-[-.01em]">
             Get started by editing{" "}
